@@ -20,6 +20,7 @@ resource "aws_subnet" "public" {
     Name = "${var.vpc_name}-public"
   }
 
+
 }
 
 
