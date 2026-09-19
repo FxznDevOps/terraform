@@ -1,24 +1,24 @@
 variable "ec2_ami" {
-    type = string
-  
+  type = string
+
 }
 
 
 variable "inst_type" {
-    type = string
-  
+  type = string
+
 }
 
 
 
 variable "subnet_id" {
-    type = string
-  
+  type = string
+
 }
 
 variable "servername" {
-    type = string
-  
+  type = string
+
 }
 
 
@@ -26,15 +26,15 @@ variable "servername" {
 
 
 variable "vpc_id1" {
-    type = string
-  
+  type = string
+
 }
 
 
 variable "ingress_rules" {
-  
+
   default = [
-    {port = "22" , protocol = "tcp" , cidr_blocks ="0.0.0.0/32"},
-    {port = "80" , protocol = "tcp" , cidr_blocks ="0.0.0.0/32"},
+    { port = "22", protocol = "tcp", cidr_blocks = "0.0.0.0/32" },
+    { port = "80", protocol = "tcp", cidr_blocks = "0.0.0.0/32" },
   ]
 }

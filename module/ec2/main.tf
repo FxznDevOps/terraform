@@ -1,17 +1,17 @@
 resource "aws_instance" "webserver" {
 
-    ami = var.ec2_ami
-    instance_type = var.inst_type
-    key_name = "Docker"
+  ami           = var.ec2_ami
+  instance_type = var.inst_type
+  key_name      = "Docker"
 
-    subnet_id = var.subnet_id
+  subnet_id = var.subnet_id
 
-    root_block_device {
-      volume_size = 8
-    }
-  
+  root_block_device {
+    volume_size = 8
+  }
+
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
-  
+
   tags = {
     Name = var.servername
   }
@@ -20,9 +20,9 @@ resource "aws_instance" "webserver" {
 
 
 resource "aws_security_group" "ec2_sg" {
-  vpc_id      = var.vpc_id1
+  vpc_id = var.vpc_id1
 
-  
+
   dynamic "ingress" {
     for_each = var.ingress_rules
 
